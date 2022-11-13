@@ -52,7 +52,58 @@ a{
   display: none;
 }
 
-@media screen and (max-width: 600px){
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #395144;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: yellow;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2);
+}
+.card .detail {
+  padding: 2px 16px;
+}
+
+
+@media screen and (max-width: 834px){
   .navbar a:not(:first-child) {display: none;}
   .navbar{
     display: flex;
@@ -67,7 +118,21 @@ a{
     text-align: left;
     padding : 0;
   }
+
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
+
+footer{
+  width: 100%;
+  background-color: #395144;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  bottom : 0;
+  position: absolute;
+}
+
   
 
 
