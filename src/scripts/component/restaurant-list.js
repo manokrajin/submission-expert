@@ -1,4 +1,5 @@
-import './restaurant-item'
+import './restaurant-item';
+
 class RestaurantList extends HTMLElement {
     constructor() {
         super();
@@ -9,7 +10,6 @@ class RestaurantList extends HTMLElement {
         this._restaurants = restaurants;
         this.render();
     }
-
 
     render() {
         this.shadowDOM.innerHTML = `
@@ -59,13 +59,15 @@ class RestaurantList extends HTMLElement {
             }
 
         </style>
+
+        <h2 class="restaurant-list-title">Restaurant List</h2>
         `
         this._restaurants.forEach(restaurant => {
             const itemContentElement = document.createElement('restaurant-item');
             itemContentElement.restaurant = restaurant;
             this.shadowDOM.appendChild(itemContentElement);
+            // console.log(restaurants)
         });
     }
 }
-
-customElements.define("restaurant-list", RestaurantList);
+customElements.define('restaurant-list', RestaurantList)

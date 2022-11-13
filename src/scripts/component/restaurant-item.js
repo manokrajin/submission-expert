@@ -12,46 +12,66 @@ class RestaurantItem extends HTMLElement {
     render() {
         this.innerHTML = `
             <style>
-                .restaurant-item {
+                * {
+                    padding: 0;
+                    margin: 0;
+                    box-sizing: border-box;
+                }
+
+                .restaurant-img {
+                    max-width: 100%;
+                    border-radius: 2em 2em 0 0;
+                    border-bottom: 1px solid black;
+                    object-fit: contain;
+                }
+
+                .restaurant-details {
+                    width: 100%;
+                    padding: 16px;
+                }
+
+                .img-container{
+                    max-width:100%;
+                    max-height:100%;
+                }
+
+                .restaurant-rating {
+                    gap: 8px;
                     display: flex;
-                    padding: 8px;
-                    border-bottom: 1px solid #ccc;
+                    align-items: center;
+                    justify-content: flex-end;
+                    margin-bottom: 8px;
                 }
-                .restaurant-item > img {
-                    width: 100px;
-                    height: 100px;
-                    object-fit: cover;
-                    border-radius: 8px;
+
+                .restaurant-rating img {
+                    width: 15px;
+                    heigth: 15px;
                 }
-                .restaurant-item > .restaurant-info {
-                    margin-left: 18px;
+
+                :host {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    border-radius: 32px;
+                    box-shadow: 5px 5px 15px grey;
+                    border: 1px solid black;
                 }
-                .restaurant-item > .restaurant-info > h2 {
-                    font-size: 24px;
-                    margin-top: 0;
-                }
-                .restaurant-item > .restaurant-info > p {
-                    margin-top: 8px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 10;
-                    -webkit-box-orient: vertical;
-                }
+
+                @media screen and (min-width: 768px) {
+                    h2 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                    }
+                  }
+
             </style>
-            <div class="restaurant-item">
-            <div class="img-container">
-            <img class="restaurant-img" src="${this._restaurant.pictureId}" alt="${this._restaurant.id}">
-        </div>
-        <div class="restaurant-details">
-            <h2>${this._restaurant.name}</h2>
-            <p>${this._restaurant.city}</p>
-            <hr><br>
-            <p>${this._restaurant.description.slice(0, 200)} <b>(Show more...)</b></p>
-        </div>
-            </div>
-        `;
+                <p>hai</p>
+            
+        `
     }
 }
-
-customElements.define("restaurant-item", RestaurantItem);
+customElements.define('restaurant-item', RestaurantItem)
